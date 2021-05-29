@@ -4,6 +4,16 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
+  - build
+  - -var
+  - image_name=elk
+  - -var
+  - project_id=cmcamarket-dev
+  - -var
+  - image_family=ubuntu-2104-lts
+  - -var
+  - image_zone=us-west1-a
+  - packer.json
   - '-c'
   - |
     # File that contains failures.
